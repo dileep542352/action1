@@ -24,12 +24,12 @@ jobs:
        - name: cloning repo
          continue-on-error: true
          run: |
-           git clone -b main https://dileep542352:${{ secrets.GH_TOKEN }}@github.com/dileep542352/newsave
+           git clone -b main https://dileep542352:${{ secrets.GH_TOKEN }}@github.com/dileep542352/pw
        - name: Running PrivateEncoderV2.0 Bot 
          timeout-minutes: 350
          continue-on-error: true
          run: |
-           cd newsave
+           cd pw
            docker build -t dockerfiles . && docker run dockerfiles
            
        - name: Loop workflow
